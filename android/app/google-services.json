@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577535068852",
+    "project_id": "revive-and-thrive-1d7e4",
+    "storage_bucket": "revive-and-thrive-1d7e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577535068852:android:fdf0225d8fcbf3b8eb25e1",
+        "android_client_info": {
+          "package_name": "com.example.web_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbIoXsCyU4CjUYOQKnJMVpD3k3tW3XWog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
