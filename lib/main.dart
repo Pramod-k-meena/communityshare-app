@@ -4,27 +4,26 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:web_app/screens/revive_and_thrive.dart';
 import 'package:web_app/screens/flower_page.dart';
+import 'package:web_app/config/app_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Load environment variables
+  await AppConfig.load();
 
   if (Firebase.apps.isEmpty) {
     if (kIsWeb) {
       // print("Configuring Firebase for Web...");
       await Firebase.initializeApp(
-        options: FirebaseOptions(
-          apiKey: "AIzaSyAINPzGAKqhAFtpNkfcAf7wr_k7acD11q0",
-          authDomain: "revive-and-thrive-1d7e4.firebaseapp.com",
-          projectId: "revive-and-thrive-1d7e4",
-          storageBucket: "revive-and-thrive-1d7e4.firebasestorage.app",
-          messagingSenderId: "577535068852",
-          appId: "1:577535068852:web:359cd68415c3d832eb25e1",
-        ),
+        options: AppConfig.firebaseOptions,
       );
       // print("Firebase for Web initialized successfully");
     } else {
       // print("Initializing Firebase for non-web platform");
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(
+        options: AppConfig.firebaseOptions,
+      );
       // print("Firebase initialized for non-web platform");
     }
   }
